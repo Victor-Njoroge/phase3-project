@@ -12,3 +12,4 @@ class Owner(Base):
     passWord = Column(String)
 
     bnbs = relationship("Bnb", back_populates="owner")
+

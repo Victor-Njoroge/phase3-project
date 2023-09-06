@@ -125,6 +125,40 @@ def main():
                 session.commit()
                 print("Customer registration successful!")
 
+                # Proceed to book a BnB
+                location = input("Enter your desired location: ")
+
+                matching_bnbs = session.query(Bnb).filter_by(location=location).all()
+
+                if not matching_bnbs:
+                    print(f"No BnBs found in location: {location}")
+                else:
+                    print("Matching BnBs:")
+                    for idx, bnb in enumerate(matching_bnbs, start=1):
+                        print(f"{idx}: {bnb.name}, Address: {bnb.address}, Price: {bnb.price}")
+
+                    choice = int(input("Enter the number of the BnB you want to book: "))
+
+                    if 1 <= choice <= len(matching_bnbs):
+                        selected_bnb = matching_bnbs[choice - 1]
+                        checkin = input("Enter Check-In Date in this format YYYY-MM-DD: ")
+                        checkout = input("Enter Check-Out Date in this format YYYY-MM-DD: ")
+
+                        try:
+                            check_in = datetime.strptime(checkin, "%Y-%m-%d").date()
+                            check_out = datetime.strptime(checkout, "%Y-%m-%d").date()
+                        except ValueError:
+                            print("Invalid date format. Please use YYYY-MM-DD.")
+                            return
+
+                        new_booking = Booking(customer=new_customer, bnb=selected_bnb, check_in=check_in, check_out=check_out)
+                        session.add(new_booking)
+                        session.commit()
+                        print("Booking successful!")
+
+                    else:
+                        print("Invalid BnB selection.")
+
         elif signup_choice == 2:
             # Owner registration
             existing_owner = session.query(Owner).filter_by(phoneNumber=phone_no).first()
@@ -135,6 +169,18 @@ def main():
                 session.add(new_owner)
                 session.commit()
                 print("Owner registration successful!")
+
+                # Proceed to register a BnB
+                location = input("Enter the location of your BnB: ")
+                address = input("Enter the address of your BnB: ")
+                price = int(input("Enter the price per night: "))
+                name = input("Enter the name of your BnB: ")
+                status = input("Enter the status of your BnB: ")
+
+                new_bnb = Bnb(owner=new_owner, location=location, address=address, price=price, name=name, status=status)
+                session.add(new_bnb)
+                session.commit()
+                print("BnB registration successful!")
 
         else:
             print("Invalid role choice for signup.")

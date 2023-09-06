@@ -16,3 +16,4 @@ class Bnb(Base):
 
     owner = relationship("Owner", back_populates="bnbs")
     bookings = relationship("Booking", back_populates="bnb")
+

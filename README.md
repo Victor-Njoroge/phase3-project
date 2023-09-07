@@ -15,3 +15,7 @@ Welcome to the backend repository of our BnB Booking App! This repository contai
 ### Prerequisites
 
 Before you start, make sure you have the following installed on your system:
+
+- Python 3.10.13
+- [SQLAlchemy](https://www.sqlalchemy.org/)
+- Sqlite3 latest

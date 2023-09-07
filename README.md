@@ -19,3 +19,11 @@ Before you start, make sure you have the following installed on your system:
 - Python 3.10.13
 - [SQLAlchemy](https://www.sqlalchemy.org/)
 - Sqlite3 latest
+
+### Installation
+
+1. Clone this repository:
+
+   ```bash
+   git clone `https://github.com/Victor-Njoroge/phase3-project.git`
+   cd bnb-booking-backend

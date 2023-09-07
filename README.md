@@ -26,4 +26,8 @@ Before you start, make sure you have the following installed on your system:
 
    ```bash
    git clone `https://github.com/Victor-Njoroge/phase3-project.git`
-   cd bnb-booking-backend
+
+### Features
+- User Authentication: Register, log in, and manage customer and owner accounts.
+- BnB Management: Owners can register their BnBs with details such as location, price, and availability.
+- Booking: Customers can search for available BnBs, make bookings, and view their booking history.

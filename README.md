@@ -40,3 +40,6 @@ This application uses a database to store user information, BnB listings, and bo
 
 ### Contributing
 We welcome contributions to improve the BnB Booking App! Please follow our contribution guidelines for more details on how to contribute.
+
+### License
+This project is licensed under the MIT License.

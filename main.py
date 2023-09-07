@@ -24,6 +24,10 @@ def Customer_login(login_choice):
         else:
             print("Invalid login credentials for Customer.")
 
+
+
+
+
 def Customer_account_creation(creation_choice):
     if creation_choice == 1:
         fname=input("Enter your First Name: ")
@@ -60,6 +64,8 @@ def booking(customer):
     else:
         print("Enter valid choice")
 
+
+
 def making_bookings(matching_location,location, customer):
     if not matching_location:
             print(f"No bns found in this location {location}")
@@ -68,7 +74,7 @@ def making_bookings(matching_location,location, customer):
         for idx, bnb in enumerate(matching_location, start=1):
             print(f"{idx}, Name: {bnb.name} Address: {bnb.address}, Price: {bnb.price}, ")
 
-        choice=int(input("Enter the number for the Bnb of your choocing"))
+        choice=int(input("Enter the number for the Bnb of your choocing: "))
 
         if 1 <= choice <= len(matching_location):
             selected=matching_location[choice-1]
@@ -94,6 +100,8 @@ def making_bookings(matching_location,location, customer):
             print("You have entered invalid bnb selection")
 
 
+
+
 def Owner_login(login_choice):
     if login_choice == 2:
         phone_no = int(input("Enter your phone number: "))
@@ -107,6 +115,9 @@ def Owner_login(login_choice):
             register_bnb(owner)
         else :
             print("Invalid credentials !!")
+
+
+
 
 def Owner_register(creation_choice):
     
@@ -127,6 +138,9 @@ def Owner_register(creation_choice):
             session.commit()
             print("Owner registration successful!")
             register_bnb(owner)
+
+
+
 
 
 def register_bnb(owner):

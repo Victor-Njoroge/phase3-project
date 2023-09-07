@@ -7,3 +7,11 @@ Welcome to the backend repository of our BnB Booking App! This repository contai
 - [Installation](#installation)
 - [Features](#features)
 - [Usage](#usage)
+- [Database](#database)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Getting Started
+### Prerequisites
+
+Before you start, make sure you have the following installed on your system:
